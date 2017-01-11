@@ -1,6 +1,7 @@
 // @flow
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+export const RESET_COUNTER = 'RESET_COUNTER';
 
 export function increment() {
   return {
@@ -31,5 +32,11 @@ export function incrementAsync(delay: number = 1000) {
     setTimeout(() => {
       dispatch(increment());
     }, delay);
+  };
+}
+
+export function reset() {
+  return {
+    type: RESET_COUNTER
   };
 }

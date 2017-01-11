@@ -8,12 +8,13 @@ class Counter extends Component {
     increment: () => void,
     incrementIfOdd: () => void,
     incrementAsync: () => void,
+    reset: () => void,
     decrement: () => void,
     counter: number
   };
 
   render() {
-    const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
+    const { increment, incrementIfOdd, incrementAsync, reset, decrement, counter } = this.props;
     return (
       <div>
         <div className={styles.backButton}>
@@ -33,6 +34,7 @@ class Counter extends Component {
           </button>
           <button className={styles.btn} onClick={incrementIfOdd}>odd</button>
           <button className={styles.btn} onClick={() => incrementAsync()}>async</button>
+          <button className={styles.btn} onClick={reset}>reset</button>
         </div>
       </div>
     );
